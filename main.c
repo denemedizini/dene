@@ -26,8 +26,6 @@ InsertionSort (int array[], int size)
 
 
 
-
-
 }
 
 void
@@ -104,16 +102,6 @@ void Heapify(int number[], int size, int i) {
 
 
 
- start5 = clock();
-	QuickSort(num5, 0, size - 1);
-	QuickSort(adressofletters5, 0, strsize - 1);
-	
-	printArray(num5, size);
-	printStringArray(adressofletters5, strsize);
-	end5 = clock();
-	float time_taken5 = ((float)(end5 - start5)) / CLOCKS_PER_SEC;
-	printf("\n\nIt took %.13lf seconds to sort arrays with Quick Sort\n\n", time_taken5);
-	
 
 }
 
@@ -148,26 +136,6 @@ BubbleSort (int array[], int size)
 
 }
 
-
-void
-InsertionSort (int array[], int size)
-{
-
-  int i, k, key;
-  for (i = 1; i < size; i++)
-    {
-
-      key = array[i];
-
-      for (k = i - 1; k >= 0 && key <= array[k]; k--)
-	{
-	  array[k + 1] = array[k];
-
-	}
-
-      array[k + 1] = key;
-
-    }
 
 void
 merge (int arr[], int left, int middle, int right)
@@ -347,7 +315,17 @@ end1= clock ();
 	  time_taken3);
 
 
+  start4 = clock ();
+  MergeSort (num4, 0, size - 1);
+  MergeSort (adressofletters4, 0, strsize - 1);
   
+  printArray (num4, size);
+  printStringArray (adressofletters4, strsize);
+  end4 = clock ();
+  float time_taken4 = ((float) (end4 - start4)) / CLOCKS_PER_SEC;
+  printf ("\n\nIt took %.13f seconds to sort arrays with Merge Sort\n\n",
+	  time_taken4);
+	  
 	  start5 = clock();
 	QuickSort(num5, 0, size - 1);
 	QuickSort(adressofletters5, 0, strsize - 1);
@@ -367,7 +345,7 @@ end1= clock ();
 	end6 = clock();
 	float time_taken6 = ((float)(end6 - start6)) / CLOCKS_PER_SEC;
 	printf("\n\nIt took %.13lf seconds to sort arrays with Heap Sort\n\n", time_taken6);
-printf(brbgr);
+
 
 
 
